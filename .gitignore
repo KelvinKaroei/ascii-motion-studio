@@ -1,0 +1,20 @@
+node_modules/
+out/
+release/
+coverage/
+*.log
+.tmp/
+public/vision/*.wasm
+public/vision/*.tflite
+public/vision/*.js
+public/vision/*.partial
+public/vision/model-source.json
+
+# Configuracao privada e arquivos locais
+.env
+.env.*
+!.env.example
+*.sqlite3
+*.db
+*.pem
+*.key

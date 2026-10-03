@@ -1,0 +1,78 @@
+/* Keep the complete workspace visible on common laptop display heights. */
+@media (min-width: 851px) and (max-height: 980px) {
+  main {
+    padding-top: 24px;
+    padding-bottom: 16px;
+  }
+  .page-heading {
+    margin-bottom: 22px;
+  }
+  .preview-stage {
+    height: 325px;
+  }
+  .settings-section {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .section-label {
+    margin-bottom: 10px;
+  }
+  .slider-heading {
+    margin-top: 15px;
+  }
+  .dropzone {
+    min-height: 102px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+  .metrics > div {
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+  .workflow-note {
+    margin-top: 13px;
+  }
+  .export-section {
+    padding-top: 13px;
+    padding-bottom: 12px;
+  }
+}
+@media (min-width: 851px) and (max-height: 800px) {
+  main {
+    padding-top: 18px;
+  }
+  .page-heading {
+    margin-bottom: 17px;
+  }
+  .eyebrow {
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 24px;
+    margin-bottom: 7px;
+  }
+  .preview-stage {
+    height: 260px;
+  }
+  .settings-section {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+  .section-label {
+    margin-bottom: 9px;
+  }
+  .dropzone {
+    margin-top: 12px;
+    min-height: 93px;
+  }
+  .metrics {
+    margin-top: 12px;
+  }
+  .export-section {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+  .workflow-note {
+    display: none;
+  }
+}

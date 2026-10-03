@@ -1,0 +1,76 @@
+{
+  "name": "ascii-motion-studio",
+  "version": "1.0.0",
+  "description": "A real-time desktop ASCII media studio",
+  "author": "ASCII Motion Studio",
+  "private": true,
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "npm run typecheck && electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:desktop": "npm run build && node scripts/run-smoke.cjs",
+    "dist": "npm run build && electron-builder",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare:vision": "node scripts/prepare-vision.cjs",
+    "postinstall": "npm run prepare:vision",
+    "predev": "npm run prepare:vision",
+    "prebuild": "npm run prepare:vision",
+    "test:vision": "npm run build && node scripts/run-smoke.cjs scripts/vision-smoke.cjs"
+  },
+  "dependencies": {
+    "@ffprobe-installer/ffprobe": "^2.1.2",
+    "@mediapipe/tasks-vision": "^1.0.1",
+    "@xterm/xterm": "^5.5.0",
+    "ffmpeg-static": "^5.2.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^40.0.0",
+    "electron-builder": "^26.0.0",
+    "electron-vite": "^3.0.0",
+    "prettier": "^3.9.6",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "vitest": "^3.0.0"
+  },
+  "build": {
+    "appId": "studio.ascii.motion",
+    "productName": "ASCII Motion Studio",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "node_modules/ffmpeg-static/**",
+      "node_modules/@ffprobe-installer/**"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "allowScripts": {
+    "electron": true,
+    "ffmpeg-static": true,
+    "esbuild": true,
+    "electron-winstaller": true
+  }
+}

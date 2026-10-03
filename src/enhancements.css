@@ -1,0 +1,51 @@
+.settings-scroll {
+  max-height: calc(100vh - 410px);
+  min-height: 285px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #3d4938 transparent;
+}
+.option-toggle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  color: #a3afbc;
+  line-height: 1.5;
+  margin-top: 14px;
+  cursor: pointer;
+}
+.option-toggle input {
+  accent-color: var(--accent);
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+.key-color {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #9aa4b2;
+  margin-top: 15px;
+}
+.key-color input {
+  width: 42px;
+  height: 26px;
+  padding: 2px;
+  border: 1px solid #354232;
+  border-radius: 5px;
+  background: #141a12;
+}
+.background-section .select-wrap select {
+  font-size: 9px;
+  padding-left: 0;
+}
+@media (max-width: 850px) {
+  .settings-panel {
+    display: block;
+  }
+  .settings-scroll {
+    max-height: 600px;
+  }
+}
